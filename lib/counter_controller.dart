@@ -1,0 +1,39 @@
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+
+// Reactive approach
+/*class CounterController {
+  RxInt _count = 0.obs;
+
+  RxInt get count => _count;
+
+  void incrementCount() {
+    _count += 2;
+  }
+
+  void decrementCount() {
+    _count -= 3;
+  }
+}*/
+
+
+class CounterController extends GetxController {
+  int _count = 0;
+
+  int get count => _count;
+
+  @override
+  void onInit() {
+    super.onInit();
+    print('On init called');
+  }
+
+  void incrementCount() {
+    _count += 2;
+    update();
+  }
+
+  void decrementCount() {
+    _count -= 3;
+    update();
+  }
+}
